@@ -2,6 +2,37 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Button from '../ui/Button';
 
+const Typewriter = ({ text, speed = 100, delay = 2000 }) => {
+    const [currentText, setCurrentText] = React.useState('');
+    const [currentIndex, setCurrentIndex] = React.useState(0);
+    const [isDeleting, setIsDeleting] = React.useState(false);
+    const [loopNum, setLoopNum] = React.useState(0);
+
+    React.useEffect(() => {
+        const i = loopNum % text.length;
+        const fullText = text[i];
+
+        const handleType = () => {
+            setCurrentText(isDeleting
+                ? fullText.substring(0, currentText.length - 1)
+                : fullText.substring(0, currentText.length + 1)
+            );
+
+            if (!isDeleting && currentText === fullText) {
+                setTimeout(() => setIsDeleting(true), delay);
+            } else if (isDeleting && currentText === '') {
+                setIsDeleting(false);
+                setLoopNum(loopNum + 1);
+            }
+        };
+
+        const timer = setTimeout(handleType, isDeleting ? speed / 2 : speed);
+        return () => clearTimeout(timer);
+    }, [currentText, isDeleting, loopNum, text, speed, delay]);
+
+    return <span>{currentText}<span className="animate-pulse">|</span></span>;
+};
+
 const Hero = () => {
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -39,8 +70,8 @@ const Hero = () => {
                 <motion.h1 variants={itemVariants} className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 tracking-tight leading-none">
                     Nithiyani Jenova.
                 </motion.h1>
-                <motion.h2 variants={itemVariants} className="text-2xl sm:text-3xl md:text-5xl font-bold text-gray-400 mb-8 leading-tight">
-                    Associate Software Engineer.
+                <motion.h2 variants={itemVariants} className="text-2xl sm:text-3xl md:text-5xl font-bold text-gray-400 mb-8 leading-tight h-[1.2em]">
+                    <Typewriter text={["Associate Software Engineer.", "Frontend Developer.", "UI/UX Enthusiast.", "Full Stack Developer."]} speed={100} delay={2000} />
                 </motion.h2>
                 <motion.p variants={itemVariants} className="text-base md:text-lg text-gray-400 max-w-2xl mb-10 leading-relaxed">
                     I'm a software engineer with hands-on experience in building modern, efficient web applications using Next.js and React. I have a strong focus on scalable frontend development and seamless system integration.
