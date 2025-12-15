@@ -3,15 +3,27 @@ import { motion } from 'framer-motion';
 
 const experiences = [
     {
-        company: "DealPartner.lk",
-        role: "Frontend Developer Intern",
-        period: "March 2025 – August 2025",
+        company: "Lanka DealPartner (PVT) LTD",
+        role: "Associate Software Engineer",
+        period: "Oct 2025 – Present",
         description: [
-            "Developed and maintained responsive user interfaces for projects including POS System, Beauty Parlour Platform, and Inquiry Management System using Next.js and React.",
-            "Collaborated with UI/UX teams to translate Figma mockups into pixel-perfect components.",
-            "Integrated third-party REST APIs for dynamic data handling and payments.",
-            "Improved page load times by 30% via code-splitting and optimization.",
-            "Participated in Agile development cycles (stand-ups, sprint planning)."
+            "Designed and maintained scalable web applications using React.js and Node.js.",
+            "Built and integrated RESTful APIs using Express.js.",
+            "Implemented authentication, authorization, and role-based access control.",
+            "Optimized application performance and improved load times.",
+            "Worked with MongoDB and MySQL for efficient data management.",
+            "Deployed applications using AWS, Vercel, and Netlify."
+        ]
+    },
+    {
+        company: "Lanka DealPartner (PVT) LTD",
+        role: "Software Engineering Intern",
+        period: "Apr 2025 – Oct 2025",
+        description: [
+            "Developed responsive user interfaces using React.js to improve user engagement and usability.",
+            "Collaborated with UI/UX designers to implement modern and intuitive designs with cross-browser compatibility.",
+            "Used Git for version control and actively participated in Agile development cycles.",
+            "Worked with Next.js and Vue.js focusing on component-based architecture and performance."
         ]
     },
     {

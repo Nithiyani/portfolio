@@ -14,7 +14,12 @@ const CustomCursor = () => {
         };
 
         const handleMouseOver = (e) => {
-            if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON' || e.target.closest('a') || e.target.closest('button')) {
+            if (
+                e.target.tagName === 'A' ||
+                e.target.tagName === 'BUTTON' ||
+                e.target.closest('a') ||
+                e.target.closest('button')
+            ) {
                 setIsHovering(true);
             } else {
                 setIsHovering(false);
@@ -35,14 +40,14 @@ const CustomCursor = () => {
             x: mousePosition.x - 8,
             y: mousePosition.y - 8,
             scale: 1,
-            backgroundColor: "rgba(247, 200, 115, 1)", // Primary Gold
+            backgroundColor: "#E6C86E", // Cool Silver
             mixBlendMode: "difference"
         },
         hover: {
             x: mousePosition.x - 24,
             y: mousePosition.y - 24,
             scale: 3,
-            backgroundColor: "rgba(247, 200, 115, 0.5)",
+            backgroundColor: "#D4AF37", // Dark Silver / Metallic
             mixBlendMode: "difference"
         }
     };
