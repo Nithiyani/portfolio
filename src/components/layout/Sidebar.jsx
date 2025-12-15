@@ -58,7 +58,9 @@ const Sidebar = () => {
         <>
             {/* Mobile Top Bar & Hamburger */}
             <div className="md:hidden fixed top-0 left-0 w-full h-16 bg-dark/95 backdrop-blur-md z-50 flex items-center justify-between px-6 shadow-md">
-                <div className="text-white font-bold text-xl tracking-wide">NJ</div>
+                <div className="text-white font-bold text-xl tracking-wide">
+                    <img src="/logo.svg" alt="N" className="h-8 w-8" />
+                </div>
                 <button
                     onClick={toggleOpen}
                     className="text-white p-2 focus:outline-none"
@@ -80,8 +82,8 @@ const Sidebar = () => {
                         className={`fixed left-0 top-0 h-screen w-64 bg-dark text-white flex flex-col justify-between py-10 z-[40] shadow-2xl ${isMobile ? 'pt-24' : ''}`}
                     >
                         {/* Brand (Desktop only) */}
-                        <div className="text-center hidden md:block">
-                            <h1 className="text-2xl font-bold font-sans tracking-wide">NJ</h1>
+                        <div className="text-center hidden md:block mb-6">
+                            <img src="/logo.svg" alt="N" className="h-16 w-16 mx-auto" />
                         </div>
 
                         {/* Navigation Links */}
